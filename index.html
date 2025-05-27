@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arti's Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navigation" >
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        
+        <!-- Left -->
+        <div class="flex-1 text-center md:text-left">
+          <h1>Hi, I'm <span>Arti</span> —<br />A <span>Tech Innovator</span> & Problem Solver</h1>
+          <p>Building smart, efficient digital solutions with passion and precision.</p>
+          <div class="buttons">
+            <a href="#projects" class="primary">View Work</a>
+            <a href="#contact" class="secondary">Get In Touch</a>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="profile-card">
+          <img src="C:\Users\ARATI\Desktop\ONLINE\in.png" alt="Arti's Profile" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<section id="about" class="section about-section container">
+  <h2>About Me</h2>
+  <p>
+    Hello! I'm a passionate developer who loves creating sleek, modern web experiences.  
+    I specialize in frontend development and enjoy working with cool CSS effects and smooth animations.  
+    When I'm not coding, you can find me exploring new technologies or crafting beautiful designs.
+  </p>
+  <button class="btn-get-in-touch" onclick="window.location.href='#contact'">Get in Touch</button>
+</section>
+
+
+<section id="skills" class="section">
+  <h2>My Skills</h2>
+  
+  <div class="skills-wrapper">
+    <div class="skills-list">
+
+      <!-- Skill Category 1 -->
+      <div class="skill-card">
+        <h3>Frontend Development</h3>
+
+        <div class="skill-item">
+          <div class="label">HTML</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 95%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="label">CSS</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 90%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="label">JavaScript</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 85%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="label">React</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Category 2 -->
+      <div class="skill-card">
+        <h3>Backend Development</h3>
+
+        <div class="skill-item">
+          <div class="label">Node.js</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 75%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="label">Express</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 70%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="label">MongoDB</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 65%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="label">SQL</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 60%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Category 3 -->
+      <div class="skill-card">
+        <h3>Tools & Platforms</h3>
+
+        <div class="skill-item">
+          <div class="label">Git & GitHub</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 85%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="label">Firebase</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 70%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="label">Vercel</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 75%;"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section project-section" id="projects">
+  <h2>My Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio showcasing skills, experience, and contact details. Built with HTML, CSS, and JavaScript.</p>
+      <a href="#" class="btn-view-details">View Details</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Task Manager App</h3>
+      <p>A full-stack task management web application built using React, Node.js, and MongoDB.</p>
+      <a href="#" class="btn-view-details">View Details</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Weather Dashboard</h3>
+      <p>Displays real-time weather forecasts with location search using OpenWeatherMap API and modern UI.</p>
+      <a href="#" class="btn-view-details">View Details</a>
+    </div>
+  </div>
+</section>
+
+<section class="achievements section" id="achievements">
+  <h2>Achievements</h2>
+  <div class="achievement-list">
+    <div class="achievement-box">
+      <h3 class="achievement-title">Best Developer Award</h3>
+      <p class="achievement-details">Awarded for outstanding performance and innovation in software development.</p>
+      <p class="achievement-date">December 2023</p>
+    </div>
+    <div class="achievement-box">
+      <h3 class="achievement-title">Hackathon Winner</h3>
+      <p class="achievement-details">Won 1st place in the Global Hackathon 2024 with a team project on AI solutions.</p>
+      <p class="achievement-date">March 2024</p>
+    </div>
+    <div class="achievement-box">
+      <h3 class="achievement-title">Employee of the Year</h3>
+      <p class="achievement-details">Recognized for exceptional dedication and contributions throughout the year.</p>
+      <p class="achievement-date">November 2023</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section contact-section" id="contact">
+  <div class="container text-center">
+    <h2>Contact Me</h2>
+    <p>If you'd like to connect, feel free to reach out via social media or download my resume below.</p>
+
+    <div class="social-icons">
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:you@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <a href="your-resume.pdf" class="btn-download-resume" download>Download My Resume</a>
+    </div>
+  </div>
+</section>
+
+
+
+<footer style="background: rgba(0, 0, 0, 0.7); color: #fff; text-align: center; padding: 25px 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <p style="margin: 0; font-weight: 600;">© 2025 Your Name. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
