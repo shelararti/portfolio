@@ -360,26 +360,47 @@ body {
 .project-card h3 {
   font-size: 1.75rem;
   color: #7dd3fc;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card .project-date {
+  display: block;
+  font-size: 0.9rem;
+  color: #a5f3fc;
+  margin-bottom: 0.8rem;
 }
 
 .project-card p {
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: #cbd5e1;
 }
 
-.project-card a {
+.project-points {
+  list-style-type: disc !important;
+  margin: 0 0 1rem 1.5rem;
+  padding: 0;
+  color: #cbd5e1;
+}
+
+.project-points li {
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.project-card a.btn-view-details {
+  display: inline-block;
   text-decoration: none;
   color: #0ea5e9;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
-.project-card a:hover {
+.project-card a.btn-view-details:hover {
   color: #38bdf8;
 }
+
 
 /* === Achievements Section === */
 .achievements {

@@ -74,77 +74,25 @@
 
 <section id="skills" class="section">
   <h2>My Skills</h2>
-  
+
   <div class="skills-wrapper">
     <div class="skills-list">
 
-      <!-- Skill Category 1 -->
-      <div class="skill-card">
-        <h3>Data</h3>
-
-        <div class="skill-item">
-          <div class="label">Pandas</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 95%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <div class="label">NumPy</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 90%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <div class="label">MySQL</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 85%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <div class="label">Matplotlib</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 80%;"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skill Category 2 -->
-      <div class="skill-card">
-        <h3>IoT & Embedded Systems</h3>
-
-        <div class="skill-item">
-          <div class="label">ESP8266</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 75%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <div class="label">Arduino IDE</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 70%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <div class="label">MQTT</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 65%;"></div>
-          </div>
-        </div>
-
-      </div>
-
+      <!-- Programming Languages -->
       <div class="skill-card">
         <h3>Programming</h3>
 
         <div class="skill-item">
           <div class="label">Python</div>
           <div class="bar">
-            <div class="bar-fill" style="width: 75%;"></div>
+            <div class="bar-fill" style="width: 90%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="label">SQL</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 85%;"></div>
           </div>
         </div>
 
@@ -154,41 +102,60 @@
             <div class="bar-fill" style="width: 70%;"></div>
           </div>
         </div>
-
-        <div class="skill-item">
-          <div class="label">Java</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 65%;"></div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Skill Category 3 -->
+      <!-- EDA -->
       <div class="skill-card">
-        <h3>Tools & Platforms</h3>
+        <h3>EDA</h3>
 
         <div class="skill-item">
-          <div class="label">Git & GitHub</div>
+          <div class="label">Data Cleaning & Preprocessing</div>
           <div class="bar">
-            <div class="bar-fill" style="width: 85%;"></div>
+            <div class="bar-fill" style="width: 90%;"></div>
+          </div>
+        </div>
+
+    
+        <div class="skill-item">
+          <div class="label">Data Visualization</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 80%;"></div>
           </div>
         </div>
 
         <div class="skill-item">
-          <div class="label">VS Code</div>
+          <div class="label">Feature Engineering & Transformations</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- Machine Learning -->
+      <div class="skill-card">
+        <h3>Machine Learning</h3>
+
+        <div class="skill-item">
+          <div class="label">Supervised Learning</div>
+          <div class="bar">
+            <div class="bar-fill" style="width: 75%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="label">Unsupervised Learning</div>
           <div class="bar">
             <div class="bar-fill" style="width: 70%;"></div>
           </div>
         </div>
 
         <div class="skill-item">
-          <div class="label">Jupitor Notebook</div>
+          <div class="label">Evaluation Metrics</div>
           <div class="bar">
-            <div class="bar-fill" style="width: 75%;"></div>
+            <div class="bar-fill" style="width: 80%;"></div>
           </div>
         </div>
-
       </div>
 
     </div>
@@ -196,56 +163,76 @@
 </section>
 
 
+
 <section class="section project-section" id="projects">
   <h2>My Projects</h2>
+
   <div class="projects-grid">
+
+    <!-- AI Tutor -->
     <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>A personal portfolio showcasing skills, experience, and contact details. 
-        <br>Tech: HTML, CSS3, and Tailwind CSS.</p>
-      <a href="https://github.com/shelararti/portfolio.git" class="btn-view-details">View Details</a>
+      <h3>AI Tutor: Personalized Education System</h3>
+      <span class="project-date">Oct 2024 – Jan 2025</span>
+      <ul class="project-points">
+        <li>AI-driven tutoring system with quiz generation, Q&A, and progress tracking.</li>
+        <li>Used embeddings + convex optimization for personalized study paths.</li>
+        <li>Built modular Streamlit UI with MySQL integration for quizzes.</li>
+      </ul>
+      <p><strong>Tech:</strong> Python, TensorFlow, Streamlit, SQL, NumPy, Pandas</p>
+      <a href="https://github.com/shelararti/AI-Tutor-Deep-Learning-Based-Personalized-Learning-System.git" class="btn-view-details">View Details</a>
     </div>
 
+    <!-- IoT LED Control -->
     <div class="project-card">
-      <h3>IoT-Based Voice-Controlled LED System</h3>
-      <p>Built an ESP8266 IoT system for remote LED control via MQTT and Adafruit IO with multi-Wi-Fi auto-connect for reliable, real-time updates.
-          <br>Tech: ESP8266, Arduino IDE, MQTT, Adafruit IO, C++
-      </p>
+      <h3>IoT-Based LED Control System</h3>
+      <span class="project-date">Oct 2024 – Jan 2025</span>
+      <ul class="project-points">
+        <li>Remote LED control using ESP8266, MQTT, and Adafruit IO.</li>
+        <li>Multi-WiFi auto-connect for reliable connectivity.</li>
+      </ul>
+      <p><strong>Tech:</strong> ESP8266, Arduino IDE, MQTT, C++</p>
       <a href="https://github.com/shelararti/IoT-based-LED-Multi_User_Control-Using-ESP8266-and-MQTT.git" class="btn-view-details">View Details</a>
     </div>
 
+    <!-- ASL Detection -->
     <div class="project-card">
-      <h3>AI Tutor: Deep Learning-Based Personalized Learning System</h3>
-      <p>Built an AI-driven education tool that personalizes learning paths using deep learning and convex optimization. 
-        <br>Tech: Python, TensorFlow, Streamlit, NumPy, Pandas</p>
-      <a href="https://github.com/shelararti/AI-Tutor-Deep-Learning-Based-Personalized-Learning-System.git" class="btn-view-details">View Details</a>
+      <h3>Real-Time ASL Sign Language Detection</h3>
+      <span class="project-date">Jan 2025 – Nov 2025</span>
+      <ul class="project-points">
+        <li>ASL recognition using MediaPipe landmarks and CNN-based model.</li>
+        <li>Engineered 210+ geometric features achieving 99.64% accuracy.</li>
+        <li>Live predictions via Flask web app for sign-to-text translation.</li>
+      </ul>
+      <p><strong>Tech:</strong> Python, TensorFlow, MediaPipe, Flask</p>
+      <a href="#" class="btn-view-details">View Details</a>
     </div>
+
   </div>
 </section>
+
 
 <section class="achievements section" id="achievements">
   <h2>Achievements</h2>
   <div class="achievement-list">
+    
     <div class="achievement-box">
-      <h3 class="achievement-title">Mock Placement Premier League 2025.</h3>
-      <p class="achievement-details">🏆 Reached Top 22 – Sanjivani Mock Placement Premier League 2025 out of 887 participants.</p>
-      <p class="achievement-date">April 2025</p>
+      <h3 class="achievement-title">NPTEL Business Analytics & Text Mining using Python</h3>
+      <p class="achievement-details">🏆 Ranked in the Top 5% nationally (Elite + Gold), scoring 90%.</p>
+      <p class="achievement-date">2025</p>
     </div>
+
     <div class="achievement-box">
-      <h3 class="achievement-title">AI Intern</h3>
-      <p class="achievement-details">Worked on automating tasks using AI and various tools.</p>
-      <p class="achievement-date">October 1st 2024 - January 15th 2025 </p>
+      <h3 class="achievement-title">Avishkar Competition</h3>
+      <p class="achievement-details">Achieved Zonal Level qualification in Avishkar Competition.</p>
+      <p class="achievement-date">2025</p>
     </div>
+
     <div class="achievement-box">
-      <h3 class="achievement-title">National-Level Tech Fest.</h3>
-      <p class="achievement-details">Participated inTech-Sanjivani 2K25.</p>
-      <p class="achievement-date">February 2025</p>
+      <h3 class="achievement-title">Smart India Hackathon (SIH)</h3>
+      <p class="achievement-details">Selected for the National Level round in Smart India Hackathon.</p>
+      <p class="achievement-date">2025</p>
     </div>
-    <div class="achievement-box">
-      <h3 class="achievement-title">ECE-ProFest</h3>
-      <p class="achievement-details">Participated in ECE-ProFest.</p>
-      <p class="achievement-date">November 2023</p>
-    </div>
+
   </div>
 </section>
 
