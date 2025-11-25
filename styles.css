@@ -55,12 +55,13 @@ body {
   padding: 0 1.5rem;
 }
 
-#cursor {
+#hero-typewriter::after {
+  content: "|";
   display: inline-block;
-  font-weight: bold;
-  color: #7dd3fc;
-  animation: blink 0.7s infinite;
   margin-left: 2px;
+  color: #7dd3fc;
+  font-weight: bold;
+  animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
@@ -68,8 +69,8 @@ body {
   25%, 75% { opacity: 0; }
 }
 
-.done-typing + #cursor {
-  display: none; /* hide cursor when done typing */
+.done-typing::after {
+  display: none; /* hide cursor after typing */
 }
 
 
