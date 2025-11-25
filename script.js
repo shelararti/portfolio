@@ -36,55 +36,53 @@ window.addEventListener("load", () => {
 /*********************************
  * 1. Futuristic Floating Particles
  *********************************/
-
-
-const canvas = document.getElementById("particle-canvas");
+const canvas = document.getElementById("bg-particles");
 const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
+function resizeParticles() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+resizeParticles();
+window.addEventListener("resize", resizeParticles);
 
 let particles = [];
 
-function createParticles() {
-  for (let i = 0; i < 70; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 3 + 1,
-      speedX: (Math.random() - 0.5) * 0.8,
-      speedY: (Math.random() - 0.5) * 0.8,
-      glow: Math.random() * 15 + 5,
-    });
-  }
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 3 + 1,
+    dx: (Math.random() - 0.5) * 0.7,
+    dy: (Math.random() - 0.5) * 0.7,
+    glow: Math.random() * 15 + 5,
+  });
 }
-createParticles();
 
-function drawParticles() {
+function animateParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   particles.forEach(p => {
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
     ctx.fillStyle = "rgba(125, 211, 252, 0.8)";
     ctx.shadowBlur = p.glow;
     ctx.shadowColor = "#38bdf8";
     ctx.fill();
 
-    p.x += p.speedX;
-    p.y += p.speedY;
+    p.x += p.dx;
+    p.y += p.dy;
 
-    if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+    if (p.x > canvas.width || p.x < 0) p.dx *= -1;
+    if (p.y > canvas.height || p.y < 0) p.dy *= -1;
   });
 
-  requestAnimationFrame(drawParticles);
+  requestAnimationFrame(animateParticles);
 }
-drawParticles();
+
+animateParticles();
+
+
 
 /*********************************
  * 2. Magnetic Buttons
