@@ -28,9 +28,16 @@ document.querySelectorAll('.navigation a').forEach(link => {
   });
 });
 
+window.addEventListener("load", () => {
+  document.querySelector(".hero").classList.add("show-content");
+});
+
+
 /*********************************
  * 1. Futuristic Floating Particles
  *********************************/
+
+
 const canvas = document.getElementById("particle-canvas");
 const ctx = canvas.getContext("2d");
 

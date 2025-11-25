@@ -260,6 +260,17 @@ body {
   transition: transform 0.2s ease;
 }
 
+.hero .container > div {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: all 0.9s ease;
+}
+
+.hero.show-content .container > div {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* === About Section === */
 
