@@ -33,6 +33,9 @@ window.addEventListener("load", () => {
 });
 
 
+window.addEventListener("load", typeWriter);
+
+
 /*********************************
  * 1. Futuristic Floating Particles
  *********************************/
@@ -105,3 +108,32 @@ magneticButtons.forEach(btn => {
   });
 });
 
+const typewriterElement = document.getElementById("hero-typewriter");
+const heroText = typewriterElement.textContent;
+typewriterElement.textContent = ""; // clear before typing
+
+let i = 0;
+
+function typeWriter() {
+  if (i < heroText.length) {
+    typewriterElement.textContent += heroText.charAt(i);
+
+    let delay = 120; // default speed
+
+    // extra pause for punctuation
+    const char = heroText.charAt(i);
+    if (char === "," || char === "—" || char === "-" || char === ".") {
+      delay = 300;
+    }
+
+    i++;
+    setTimeout(typeWriter, delay);
+  } else {
+    typewriterElement.classList.add("done-typing");
+  }
+}
+
+window.addEventListener("load", () => {
+  typeWriter();
+  document.querySelector(".hero").classList.add("show-content");
+});

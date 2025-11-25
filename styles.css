@@ -26,7 +26,6 @@ body {
 }
 
 
-
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap');
 
@@ -56,9 +55,27 @@ body {
   padding: 0 1.5rem;
 }
 
+#cursor {
+  display: inline-block;
+  font-weight: bold;
+  color: #7dd3fc;
+  animation: blink 0.7s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.done-typing + #cursor {
+  display: none; /* hide cursor when done typing */
+}
+
+
 /* === Section Base Styling === */
 .section {
-  margin: 4rem 0;
+  margin: 5rem 0; /* Increased spacing to prevent overlapping */
   padding: 2.5rem 2rem;
   background: rgba(14, 165, 233, 0.08); /* unified subtle blue glass */
   backdrop-filter: blur(24px);
@@ -99,6 +116,13 @@ body {
 }
 
 /* === Hero Section === */
+
+@keyframes gradientShift {
+  0% { background: linear-gradient(135deg, #0f172a, #1e293b); }
+  50% { background: linear-gradient(135deg, #0a1628, #0f3650); }
+  100% { background: linear-gradient(135deg, #0f172a, #1e293b); }
+}
+
 .hero {
   position: relative;
   background: transparent !important;
@@ -165,11 +189,13 @@ body {
 }
 
 .hero img {
-  width: 580px;
-  height: 580px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   object-fit: cover;
-  border-radius: 9999px;
-  margin-bottom: 2rem;
+  border-radius: 50%;
+  margin: 3rem auto; /* spacing above & below */
+  display: block;
   box-shadow: 0 0 30px #7dd3fc, 0 10px 30px rgba(0, 0, 0, 0.6);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -178,15 +204,41 @@ body {
   transform: scale(1.06);
   box-shadow: 0 0 40px #38bdf8, 0 12px 40px rgba(0, 0, 0, 0.7);
 }
+
+/* Lift hero content above particles */
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Magnetic Button Effect */
+.magnetic {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.hero .container > div {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: all 0.9s ease;
+}
+
+.hero.show-content .container > div {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* === Profile Card === */
 .profile-card {
-  background: rgba(255, 255, 255, 0.15); /* semi-transparent white */
+  background: rgba(255, 255, 255, 0.15);
   padding: 4rem 3rem;
   border-radius: 32px;
   max-width: 600px;
-  margin: 5rem auto;
+  margin: 5rem auto; /* increased spacing */
   text-align: center;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(15px); /* blur the background behind the card */
+  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -198,8 +250,9 @@ body {
 }
 
 .profile-card img {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 2rem;
@@ -221,69 +274,7 @@ body {
   line-height: 1.6;
 }
 
-/* Responsive Hero */
-@media (min-width: 768px) {
-  .hero {
-    flex-direction: row;
-    text-align: left;
-    gap: 3rem;
-  }
-
-  .hero img {
-    margin-bottom: 0;
-  }
-}
-
-/* === Animated Gradient Background === */
-.hero {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  animation: gradientShift 12s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% { background: linear-gradient(135deg, #0f172a, #1e293b); }
-  50% { background: linear-gradient(135deg, #0a1628, #0f3650); }
-  100% { background: linear-gradient(135deg, #0f172a, #1e293b); }
-}
-
-/* === Particle Canvas Layer (behind everything) === */
-.hero #particle-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Lift hero content above particles */
-.hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* === Magnetic Button Effect === */
-.magnetic {
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.hero .container > div {
-  opacity: 0;
-  transform: translateY(35px);
-  transition: all 0.9s ease;
-}
-
-.hero.show-content .container > div {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
 /* === About Section === */
-
 .about-section {
   max-width: 1100px;
   margin: 0 auto;
@@ -299,9 +290,7 @@ body {
 }
 
 /* === Buttons === */
-
-.btn-get-in-touch,
-.btn-download-resume {
+.btn-get-in-touch, .btn-download-resume {
   display: inline-block;
   background: linear-gradient(135deg, #38bdf8, #0ea5e9);
   color: white;
@@ -317,14 +306,12 @@ body {
   text-align: center;
 }
 
-.btn-get-in-touch:hover,
-.btn-download-resume:hover {
+.btn-get-in-touch:hover, .btn-download-resume:hover {
   background: linear-gradient(135deg, #0ea5e9, #0284c7);
   box-shadow: 0 8px 30px rgba(14, 165, 233, 0.6);
   transform: translateY(-3px);
 }
 
-/* === Skills Section === */
 /* === Skills Section === */
 .skills-list {
   display: grid;
@@ -352,7 +339,7 @@ body {
 }
 
 .skill-card h3 {
-  color: #0ea5e9;             /* solid blue color */
+  color: #0ea5e9;
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -362,7 +349,6 @@ body {
   padding-bottom: 0.5rem;
   margin-bottom: 2rem;
 }
-
 
 .skill-item {
   display: flex;
@@ -394,7 +380,6 @@ body {
   width: 0;
   transition: width 1.5s ease-in-out;
 }
-
 
 /* === Projects Section === */
 .project-section {
@@ -471,13 +456,12 @@ body {
   color: #38bdf8;
 }
 
-
 /* === Achievements Section === */
 .achievements {
   max-width: 1550px;
-  margin: 4rem auto; /* space from upper section */
+  margin: 4rem auto;
   padding: 2rem;
-  background: rgba(14, 165, 233, 0.1); /* subtle blue glass effect */
+  background: rgba(14, 165, 233, 0.1);
   border-radius: 25px;
   box-shadow: 0 10px 40px rgba(14, 165, 233, 0.2);
   font-family: 'Poppins', sans-serif;
@@ -493,7 +477,7 @@ body {
 
 .achievements h2 {
   font-size: 2.75rem;
-  color: #0ea5e9; /* bright blue */
+  color: #0ea5e9;
   margin-bottom: 2rem;
   font-weight: 600;
   text-align: center;
@@ -502,7 +486,7 @@ body {
 .achievement-list {
   display: flex;
   flex-direction: column;
-  gap: 1.8rem; /* space between each achievement box */
+  gap: 1.8rem;
 }
 
 .achievement-box {
@@ -547,7 +531,7 @@ body {
 /* === Contact Section - Social Icons === */
 .social-icons {
   display: flex;
-  justify-content: center;   /* Centers icons horizontally */
+  justify-content: center;
   align-items: center;
   gap: 1.5rem;
   margin-top: 1.5rem;
@@ -567,7 +551,7 @@ body {
 
 /* === Download Resume Button === */
 .btn-download-resume {
-  background: linear-gradient(135deg, #14b8a6, #06b6d4); /* teal to cyan */
+  background: linear-gradient(135deg, #14b8a6, #06b6d4);
   color: white;
   padding: 0.75rem 2rem;
   font-size: 1.1rem;
@@ -623,78 +607,37 @@ body {
 }
 
 /* === Utility Classes === */
-.text-center {
-  text-align: center;
-}
-
-.mt-1 {
-  margin-top: 1rem;
-}
-
-.mb-1 {
-  margin-bottom: 1rem;
-}
-
-.mb-2 {
-  margin-bottom: 2rem;
-}
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
 
 /* === Scrollbar Styling for Webkit Browsers === */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
   background: #0ea5e9;
   border-radius: 20px;
 }
 
 /* === Animations for skill bars (example) === */
-.skill-item .bar-fill[data-percent="80"] {
-  width: 80%;
-}
-
-.skill-item .bar-fill[data-percent="90"] {
-  width: 90%;
-}
-
-.skill-item .bar-fill[data-percent="70"] {
-  width: 70%;
-}
-
-/* Add more percentages as needed */
+.skill-item .bar-fill[data-percent="80"] { width: 80%; }
+.skill-item .bar-fill[data-percent="90"] { width: 90%; }
+.skill-item .bar-fill[data-percent="70"] { width: 70%; }
 
 /* === Responsive tweaks === */
-@media (max-width: 600px) {
-  .section {
-    padding: 1.5rem 1rem;
-    margin: 3rem 0;
-  }
+@media (max-width: 768px) {
+  .hero img, .profile-card img { max-width: 80%; }
 }
+
 @media (max-width: 640px) {
-  .hero h1 {
-    font-size: 2rem;
-    line-height: 1.3;
-  }
+  .hero h1 { font-size: 2rem; line-height: 1.3; }
+  .hero p { font-size: 1rem; margin: 1rem 0; }
+  .hero .buttons { display: flex; flex-direction: column; gap: 0.75rem; }
+  .hero .buttons a { margin: 0; width: 100%; text-align: center; }
+  .section { padding: 1.5rem 1rem; margin: 3rem 0; }
+}
 
-  .hero p {
-    font-size: 1rem;
-    margin: 1rem 0;
-  }
-
-  .hero .buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .hero .buttons a {
-    margin: 0;
-    width: 100%;
-    text-align: center;
-  }
+@media (max-width: 480px) {
+  .hero img, .profile-card img { max-width: 90%; }
 }

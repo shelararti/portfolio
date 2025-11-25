@@ -7,31 +7,23 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHPW0GFCXY"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NHPW0GFCXY');
-  </script>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-
-  <!-- Custom Styles -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- Particle Canvas -->
   <canvas id="bg-particles"></canvas>
 
-
   <!-- Navigation -->
-  <nav class="navigation" >
+  <nav class="navigation">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
@@ -39,229 +31,199 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-         <div class="container">
-      <div class="flex flex-col md:flex-row items-center gap-12">
-        
-        <!-- Left -->
-        <div class="flex-1 text-center md:text-left">
-          <h1>Hi, I'm <span>Arti</span> —<br />A <span>Blending Code,</span> Creativity & Purpose</h1>
-          <p>Exploring the future through Data Science, AI, and hands-on projects.</p>
-          <div class="buttons">
-            <a href="#projects" class="primary">View Work</a>
-            <a href="#contact" class="secondary">Get In Touch</a>
+<!-- Hero Section -->
+<section class="hero relative">
+  <canvas id="bg-particles" class="absolute top-0 left-0 w-full h-full"></canvas>
+
+  <div class="container relative z-10">
+    <div class="flex flex-col md:flex-row items-center gap-12">
+
+      <!-- Left Content -->
+      <div class="flex-1 text-center md:text-left">
+        <h1 id="hero-typewriter">Hi, I'm <span>Arti</span> — A <span>Blending Code,</span> Creativity & Purpose</h1>
+        <!-- no separate cursor span needed -->
+        <p>Exploring the future through Data Science, AI, and hands-on projects.</p>
+        <div class="buttons">
+          <a href="#projects" class="primary">View Work</a>
+          <a href="#contact" class="secondary">Get In Touch</a>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="flex-1 flex justify-center">
+        <img src="in.png" alt="Arti's Profile" class="hero-img" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- About Section -->
+  <section id="about" class="section about-section container">
+    <h2>About Me</h2>
+    <p>
+      I’m Arti. I explore ideas through AI, IoT, and data-driven design. 
+      This space is for sharing real projects, creative experiments, 
+      and tech which showcases my journey of building tech that matters.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2>My Skills</h2>
+    <div class="skills-wrapper">
+      <div class="skills-list">
+
+        <!-- Programming Languages -->
+        <div class="skill-card">
+          <h3>Programming</h3>
+          <div class="skill-item">
+            <div class="label">Python</div>
+            <div class="bar"><div class="bar-fill" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="label">SQL</div>
+            <div class="bar"><div class="bar-fill" style="width: 85%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="label">C</div>
+            <div class="bar"><div class="bar-fill" style="width: 70%;"></div></div>
           </div>
         </div>
 
-        <!-- Right -->
-        <div class="flex-1 flex justify-center">
-          <img src="in.png" alt="Arti's Profile" />
+        <!-- EDA -->
+        <div class="skill-card">
+          <h3>EDA</h3>
+          <div class="skill-item">
+            <div class="label">Data Cleaning & Preprocessing</div>
+            <div class="bar"><div class="bar-fill" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="label">Data Visualization</div>
+            <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="label">Feature Engineering & Transformations</div>
+            <div class="bar"><div class="bar-fill" style="width: 75%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Machine Learning -->
+        <div class="skill-card">
+          <h3>Machine Learning</h3>
+          <div class="skill-item">
+            <div class="label">Supervised Learning</div>
+            <div class="bar"><div class="bar-fill" style="width: 75%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="label">Unsupervised Learning</div>
+            <div class="bar"><div class="bar-fill" style="width: 70%;"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="label">Evaluation Metrics</div>
+            <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-<section id="about" class="section about-section container">
-  <h2>About Me</h2>
-  <p>
-    I’m Arti. I explore ideas through AI, IoT, and data-driven design. 
-    This space is for sharing real projects, creative experiments, 
-    and tech which showcases my journey of building tech that matters.
-  </p>
-</section>
+  <!-- Projects Section -->
+  <section class="section project-section" id="projects">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
 
-
-<section id="skills" class="section">
-  <h2>My Skills</h2>
-
-  <div class="skills-wrapper">
-    <div class="skills-list">
-
-      <!-- Programming Languages -->
-      <div class="skill-card">
-        <h3>Programming</h3>
-
-        <div class="skill-item">
-          <div class="label">Python</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 90%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <div class="label">SQL</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 85%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <div class="label">C</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 70%;"></div>
-          </div>
-        </div>
+      <div class="project-card">
+        <h3>AI Tutor: Personalized Education System</h3>
+        <span class="project-date">Oct 2024 – Jan 2025</span>
+        <ul class="project-points">
+          <li>AI-driven tutoring system with quiz generation, Q&A, and progress tracking.</li>
+          <li>Used embeddings + convex optimization for personalized study paths.</li>
+          <li>Built modular Streamlit UI with MySQL integration for quizzes.</li>
+        </ul>
+        <p><strong>Tech:</strong> Python, TensorFlow, Streamlit, SQL, NumPy, Pandas</p>
+        <a href="https://github.com/shelararti/AI-Tutor-Deep-Learning-Based-Personalized-Learning-System.git" class="btn-view-details">View Details</a>
       </div>
 
-      <!-- EDA -->
-      <div class="skill-card">
-        <h3>EDA</h3>
-
-        <div class="skill-item">
-          <div class="label">Data Cleaning & Preprocessing</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 90%;"></div>
-          </div>
-        </div>
-
-    
-        <div class="skill-item">
-          <div class="label">Data Visualization</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 80%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <div class="label">Feature Engineering & Transformations</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 75%;"></div>
-          </div>
-        </div>
+      <div class="project-card">
+        <h3>IoT-Based LED Control System</h3>
+        <span class="project-date">Oct 2024 – Jan 2025</span>
+        <ul class="project-points">
+          <li>Remote LED control using ESP8266, MQTT, and Adafruit IO.</li>
+          <li>Multi-WiFi auto-connect for reliable connectivity.</li>
+        </ul>
+        <p><strong>Tech:</strong> ESP8266, Arduino IDE, MQTT, C++</p>
+        <a href="https://github.com/shelararti/IoT-based-LED-Multi_User_Control-Using-ESP8266-and-MQTT.git" class="btn-view-details">View Details</a>
       </div>
 
-      
-      <!-- Machine Learning -->
-      <div class="skill-card">
-        <h3>Machine Learning</h3>
-
-        <div class="skill-item">
-          <div class="label">Supervised Learning</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 75%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <div class="label">Unsupervised Learning</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 70%;"></div>
-          </div>
-        </div>
-
-        <div class="skill-item">
-          <div class="label">Evaluation Metrics</div>
-          <div class="bar">
-            <div class="bar-fill" style="width: 80%;"></div>
-          </div>
-        </div>
+      <div class="project-card">
+        <h3>Real-Time ASL Sign Language Detection</h3>
+        <span class="project-date">Jan 2025 – Nov 2025</span>
+        <ul class="project-points">
+          <li>ASL recognition using MediaPipe landmarks and CNN-based model.</li>
+          <li>Engineered 210+ geometric features achieving 99.64% accuracy.</li>
+          <li>Live predictions via Flask web app for sign-to-text translation.</li>
+        </ul>
+        <p><strong>Tech:</strong> Python, TensorFlow, MediaPipe, Flask</p>
+        <a href="#" class="btn-view-details">View Details</a>
       </div>
 
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Achievements Section -->
+  <section class="achievements section" id="achievements">
+    <h2>Achievements</h2>
+    <div class="achievement-list">
+      <div class="achievement-box">
+        <h3 class="achievement-title">NPTEL Business Analytics & Text Mining using Python</h3>
+        <p class="achievement-details">🏆 Ranked in the Top 5% nationally (Elite + Gold), scoring 90%.</p>
+        <p class="achievement-date">2025</p>
+      </div>
 
+      <div class="achievement-box">
+        <h3 class="achievement-title">Avishkar Competition</h3>
+        <p class="achievement-details">Achieved Zonal Level qualification in Avishkar Competition.</p>
+        <p class="achievement-date">2025</p>
+      </div>
 
-<section class="section project-section" id="projects">
-  <h2>My Projects</h2>
-
-  <div class="projects-grid">
-
-    <!-- AI Tutor -->
-    <div class="project-card">
-      <h3>AI Tutor: Personalized Education System</h3>
-      <span class="project-date">Oct 2024 – Jan 2025</span>
-      <ul class="project-points">
-        <li>AI-driven tutoring system with quiz generation, Q&A, and progress tracking.</li>
-        <li>Used embeddings + convex optimization for personalized study paths.</li>
-        <li>Built modular Streamlit UI with MySQL integration for quizzes.</li>
-      </ul>
-      <p><strong>Tech:</strong> Python, TensorFlow, Streamlit, SQL, NumPy, Pandas</p>
-      <a href="https://github.com/shelararti/AI-Tutor-Deep-Learning-Based-Personalized-Learning-System.git" class="btn-view-details">View Details</a>
+      <div class="achievement-box">
+        <h3 class="achievement-title">Smart India Hackathon (SIH)</h3>
+        <p class="achievement-details">Selected for the National Level round in Smart India Hackathon.</p>
+        <p class="achievement-date">2025</p>
+      </div>
     </div>
+  </section>
 
-    <!-- IoT LED Control -->
-    <div class="project-card">
-      <h3>IoT-Based LED Control System</h3>
-      <span class="project-date">Oct 2024 – Jan 2025</span>
-      <ul class="project-points">
-        <li>Remote LED control using ESP8266, MQTT, and Adafruit IO.</li>
-        <li>Multi-WiFi auto-connect for reliable connectivity.</li>
-      </ul>
-      <p><strong>Tech:</strong> ESP8266, Arduino IDE, MQTT, C++</p>
-      <a href="https://github.com/shelararti/IoT-based-LED-Multi_User_Control-Using-ESP8266-and-MQTT.git" class="btn-view-details">View Details</a>
+  <!-- Contact Section -->
+  <section class="section contact-section" id="contact">
+    <div class="container text-center">
+      <h2>Contact Me</h2>
+      <p>Let’s collaborate or just say hi — I’m always open to new ideas and conversations.</p>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/arti-shelar-a6b269291/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/shelararti" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:shelararti10@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <a href="RESUME_ARTI.pdf" class="btn-download-resume" download>Download My Resume</a>
+      </div>
     </div>
+  </section>
 
-    <!-- ASL Detection -->
-    <div class="project-card">
-      <h3>Real-Time ASL Sign Language Detection</h3>
-      <span class="project-date">Jan 2025 – Nov 2025</span>
-      <ul class="project-points">
-        <li>ASL recognition using MediaPipe landmarks and CNN-based model.</li>
-        <li>Engineered 210+ geometric features achieving 99.64% accuracy.</li>
-        <li>Live predictions via Flask web app for sign-to-text translation.</li>
-      </ul>
-      <p><strong>Tech:</strong> Python, TensorFlow, MediaPipe, Flask</p>
-      <a href="#" class="btn-view-details">View Details</a>
-    </div>
+  <!-- Footer -->
+  <footer style="background: rgba(0, 0, 0, 0.7); color: #fff; text-align: center; padding: 25px 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <p style="margin: 0; font-weight: 600;">© 2025 Arti Shelar. All rights reserved.</p>
+  </footer>
 
-  </div>
-</section>
-
-
-<section class="achievements section" id="achievements">
-  <h2>Achievements</h2>
-  <div class="achievement-list">
-    
-    <div class="achievement-box">
-      <h3 class="achievement-title">NPTEL Business Analytics & Text Mining using Python</h3>
-      <p class="achievement-details">🏆 Ranked in the Top 5% nationally (Elite + Gold), scoring 90%.</p>
-      <p class="achievement-date">2025</p>
-    </div>
-
-    <div class="achievement-box">
-      <h3 class="achievement-title">Avishkar Competition</h3>
-      <p class="achievement-details">Achieved Zonal Level qualification in Avishkar Competition.</p>
-      <p class="achievement-date">2025</p>
-    </div>
-
-    <div class="achievement-box">
-      <h3 class="achievement-title">Smart India Hackathon (SIH)</h3>
-      <p class="achievement-details">Selected for the National Level round in Smart India Hackathon.</p>
-      <p class="achievement-date">2025</p>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="section contact-section" id="contact">
-  <div class="container text-center">
-    <h2>Contact Me</h2>
-    <p>Let’s collaborate or just say hi — I’m always open to new ideas and conversations.</p>
-
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/arti-shelar-a6b269291/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/shelararti" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:shelararti10@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-
-    <div style="margin-top: 2rem;">
-      <a href="RESUME_ARTI.pdf" class="btn-download-resume" download>Download My Resume</a>
-    </div>
-  </div>
-</section>
-
-
-
-<footer style="background: rgba(0, 0, 0, 0.7); color: #fff; text-align: center; padding: 25px 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  <p style="margin: 0; font-weight: 600;">© 2025 Arti Shelar. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
+  <!-- JS -->
+  <script src="script.js"></script>
 
 </body>
 </html>
