@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Arti Shelar – AI, Data Science, IoT projects and research.">
+  <meta property="og:title" content="Arti Shelar Portfolio">
+  <meta property="og:description" content="AI, Data Science, and IoT Projects">
+  <meta property="og:type" content="website">
+  <meta name="author" content="Arti Shelar">
   <title>Arti's Portfolio</title>
 
   <!-- Google Fonts -->
@@ -15,25 +20,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-
+  
   <!-- Particle Canvas -->
-  <canvas id="bg-particles"></canvas>
+  <canvas id="bg-particles" class="absolute top-0 left-0 w-full h-full"></canvas>
 
-  <!-- Navigation -->
+<header>
+
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
   <nav class="navigation">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
   </nav>
 
-<!-- Hero Section -->
+  <div class="overlay"></div>
+
+</header>
+
+  <!-- Hero Section -->
 <section class="hero relative">
-  <canvas id="bg-particles" class="absolute top-0 left-0 w-full h-full"></canvas>
 
   <div class="container relative z-10">
     <div class="flex flex-col md:flex-row items-center gap-12">
@@ -51,7 +66,7 @@
 
       <!-- Right Image -->
       <div class="flex-1 flex justify-center">
-        <img src="in.png" alt="Arti's Profile" class="hero-img" />
+        <img src="in.png" alt="Portrait of Arti Shelar" class="hero-img" loading="lazy"/>
       </div>
 
     </div>
@@ -62,14 +77,20 @@
 
 
   <!-- About Section -->
-  <section id="about" class="section about-section container">
+<section id="about" class="section about-section">
+  <div class="container">
     <h2>About Me</h2>
-    <p>
-      I’m Arti. I explore ideas through AI, IoT, and data-driven design. 
-      This space is for sharing real projects, creative experiments, 
-      and tech which showcases my journey of building tech that matters.
-    </p>
-  </section>
+
+    <div class="about-card">
+      <p>
+        I’m Arti. I explore ideas through AI, IoT, and data-driven design.
+        This space shares real projects, creative experiments, and my journey
+        of building technology that solves meaningful problems.
+      </p>
+    </div>
+
+  </div>
+</section>
 
   <!-- Skills Section -->
   <section id="skills" class="section">
@@ -133,8 +154,9 @@
   </section>
 
   <!-- Projects Section -->
-  <section class="section project-section" id="projects">
-    <h2>My Projects</h2>
+  <section class="section project-section" id="projects" aria-labelledby="projects-heading">
+  
+    <h2 id="projects-heading">My Projects</h2>
     <div class="projects-grid">
 
       <div class="project-card">
@@ -206,9 +228,9 @@
       <p>Let’s collaborate or just say hi — I’m always open to new ideas and conversations.</p>
 
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/arti-shelar-a6b269291/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/shelararti" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:shelararti10@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/arti-shelar-a6b269291/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/shelararti" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="mailto:shelararti10@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
       </div>
 
       <div style="margin-top: 2rem;">
@@ -219,11 +241,11 @@
 
   <!-- Footer -->
   <footer style="background: rgba(0, 0, 0, 0.7); color: #fff; text-align: center; padding: 25px 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <p style="margin: 0; font-weight: 600;">© 2025 Arti Shelar. All rights reserved.</p>
+    <p style="margin: 0; font-weight: 600;">© <span id="year"></span> Arti Shelar.</p>
   </footer>
 
   <!-- JS -->
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
 </body>
 </html>

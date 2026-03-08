@@ -1,0 +1,48 @@
+/* Magnetic Button Effect */
+.magnetic {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* === Buttons === */
+.btn-get-in-touch, .btn-download-resume {
+  display: inline-block;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(14, 165, 233, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-get-in-touch:hover, .btn-download-resume:hover {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  box-shadow: 0 8px 30px rgba(14, 165, 233, 0.6);
+  transform: translateY(-3px);
+}
+
+/* === Download Resume Button === */
+.btn-download-resume {
+  background: linear-gradient(135deg, #14b8a6, #06b6d4);
+  color: white;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.3);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-download-resume:hover {
+  background: linear-gradient(135deg, #06b6d4, #0ea5e9);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.5);
+}

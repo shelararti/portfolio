@@ -1,0 +1,114 @@
+
+/* === Profile Card === */
+.profile-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4rem 3rem;
+  border-radius: 32px;
+  max-width: 600px;
+  margin: 5rem auto; /* increased spacing */
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+}
+
+.profile-card img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  box-shadow: 0 12px 24px rgba(14, 165, 233, 0.25);
+  border: 5px solid #0ea5e9;
+}
+
+.profile-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.profile-card p {
+  font-size: 1.3rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.achievement-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 1.8rem 2rem;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.15);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  color: #dbeafe;
+}
+
+.achievement-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(14, 165, 233, 0.35);
+  border-color: #0ea5e9;
+}
+
+.project-card {
+  background: rgba(14, 165, 233, 0.07);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(14, 165, 233, 0.15);
+  box-shadow: 0 4px 30px rgba(14, 165, 233, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #e0f2fe;
+  text-align: left;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 40px rgba(14, 165, 233, 0.4);
+}
+
+.project-card h3 {
+  font-size: 1.75rem;
+  color: #7dd3fc;
+  margin-bottom: 0.5rem;
+}
+
+.project-card .project-date {
+  display: block;
+  font-size: 0.9rem;
+  color: #a5f3fc;
+  margin-bottom: 0.8rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #cbd5e1;
+}
+
+.project-card a.btn-view-details {
+  display: inline-block;
+  text-decoration: none;
+  color: #0ea5e9;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.project-card a.btn-view-details:hover {
+  color: #ffffff; /* higher contrast than #38bdf8 */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* optional subtle outline */
+}
+

@@ -1,0 +1,86 @@
+@import "base/variables.css";
+@import "base/reset.css";
+@import "base/typography.css";
+
+@import "layout/navigation.css";
+@import "layout/hero.css";
+@import "layout/sections.css";
+
+@import "components/cards.css";
+@import "components/buttons.css";
+@import "components/skills.css";
+
+@import "utilities/utilities.css";
+
+@import "animations/animations.css";
+
+
+/* ================= PARTICLES ================= */
+
+#bg-particles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+/* === Scrollbar Styling for Webkit Browsers === */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #0ea5e9;
+  border-radius: 20px;
+}
+
+
+/* === Responsive tweaks === */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1200;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+  }
+
+  .navigation {
+    position: fixed;
+    top: 0;
+
+    left: auto;        /* override desktop */
+    right: -260px;     /* hide off screen */
+
+    width: 260px;
+    height: 100vh;
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    padding: 80px 0 0 30px;
+    gap: 25px;
+
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(25px);
+
+    transition: right 0.4s ease;
+  }
+
+  .navigation.active {
+    right: 0;   /* show menu */
+  }
+
+}

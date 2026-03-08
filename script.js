@@ -17,23 +17,40 @@ window.addEventListener("scroll", () => {
   });
 });
 
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".navigation");
+const overlay = document.querySelector(".overlay");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+  overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+  nav.classList.remove("active");
+  overlay.classList.remove("active");
+});
+
+
 document.querySelectorAll('.navigation a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
+
     const target = document.querySelector(e.target.getAttribute('href'));
 
     target.scrollIntoView({
       behavior: 'smooth'
     });
+
+    nav.classList.remove("active");
+    overlay.classList.remove("active");
   });
 });
 
 window.addEventListener("load", () => {
+  typeWriter();
   document.querySelector(".hero").classList.add("show-content");
 });
-
-
-window.addEventListener("load", typeWriter);
 
 
 /*********************************
@@ -137,3 +154,5 @@ window.addEventListener("load", () => {
   typeWriter();
   document.querySelector(".hero").classList.add("show-content");
 });
+
+document.getElementById("year").textContent = new Date().getFullYear();
