@@ -3,29 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Arti Shelar – AI, Data Science, IoT projects and research.">
-  <meta property="og:title" content="Arti Shelar Portfolio">
-  <meta property="og:description" content="AI, Data Science, and IoT Projects">
-  <meta property="og:type" content="website">
+  <title>Arti Shelar | AI, Data Science &amp; IoT Portfolio</title>
+  <meta name="description" content="Portfolio of Arti Shelar — AI Intern building chatbots, computer vision and IoT systems. Explore projects in machine learning, data science and sign-language translation.">
   <meta name="author" content="Arti Shelar">
-  <title>Arti's Portfolio</title>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.artishelar.com/" />
 
-  <!-- Google Fonts -->
+  <!-- Open Graph / social sharing -->
+  <meta property="og:title" content="Arti Shelar | AI, Data Science & IoT Portfolio">
+  <meta property="og:description" content="AI Intern building chatbots, computer vision and IoT systems. Explore projects in machine learning, data science and sign-language translation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.artishelar.com/">
+  <meta property="og:site_name" content="Arti Shelar Portfolio">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Arti Shelar | AI, Data Science & IoT Portfolio">
+  <meta name="twitter:description" content="AI Intern building chatbots, computer vision and IoT systems.">
+
+  <meta name="theme-color" content="#0ea5e9">
+
+  <!-- Inline SVG favicon: avoids the free 404 request browsers make for /favicon.ico -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230ea5e9'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial, sans-serif' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Arti Shelar",
+    "url": "https://www.artishelar.com/",
+    "jobTitle": "AI & Data Science Student / AI Intern",
+    "email": "mailto:shelararti10@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/arti-shelar-a6b269291/",
+      "https://github.com/shelararti"
+    ]
+  }
+  </script>
+
+  <!-- Connection warmup for third-party origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- Google Fonts (loaded once, here only — no duplicate @import in CSS) -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Awesome, loaded non-render-blocking (swapped in once fetched) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Particle Canvas -->
-  <canvas id="bg-particles" class="absolute top-0 left-0 w-full h-full"></canvas>
 
   <!-- Fireflies (Bioluminescent Forest theme) -->
   <div class="fireflies" aria-hidden="true">

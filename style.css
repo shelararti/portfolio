@@ -37,7 +37,9 @@
 }
 
 /* ---------- Base: typography ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap');
+/* Fonts are loaded once via <link> in index.html's <head> — do not
+   re-import them here, it would duplicate the request and block
+   CSS parsing while it downloads. */
 
 html {
   overflow-x: hidden;
@@ -2308,13 +2310,11 @@ body.nav-open {
 .mb-1 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 2rem; }
 
-/* ---------- Particles ---------- */
-#bg-particles {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-}
+/* Native replacements for the couple of Tailwind utility classes left
+   in the markup (Tailwind CDN script has been removed — it was
+   shipping an entire JIT CSS compiler to the browser for ~8 classes). */
+.relative { position: relative; }
+.z-10 { position: relative; z-index: 10; }
 
 /* ---------- Fireflies (Bioluminescent Forest theme) ---------- */
 .fireflies {
