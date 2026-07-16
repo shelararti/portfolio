@@ -20,16 +20,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
+
   <!-- Particle Canvas -->
   <canvas id="bg-particles" class="absolute top-0 left-0 w-full h-full"></canvas>
 
+  <!-- Fireflies (Bioluminescent Forest theme) -->
+  <div class="fireflies" aria-hidden="true">
+    <span class="firefly" style="left:8%; top:22%; animation-delay:0s; animation-duration:7s;"></span>
+    <span class="firefly" style="left:18%; top:68%; animation-delay:1.2s; animation-duration:9s;"></span>
+    <span class="firefly" style="left:30%; top:40%; animation-delay:2.4s; animation-duration:6.5s;"></span>
+    <span class="firefly" style="left:47%; top:15%; animation-delay:0.6s; animation-duration:8s;"></span>
+    <span class="firefly" style="left:60%; top:55%; animation-delay:3s; animation-duration:7.5s;"></span>
+    <span class="firefly" style="left:72%; top:30%; animation-delay:1.8s; animation-duration:9.5s;"></span>
+    <span class="firefly" style="left:83%; top:75%; animation-delay:0.3s; animation-duration:6.8s;"></span>
+    <span class="firefly" style="left:92%; top:20%; animation-delay:2.1s; animation-duration:8.4s;"></span>
+    <span class="firefly" style="left:38%; top:85%; animation-delay:1.5s; animation-duration:7.2s;"></span>
+    <span class="firefly" style="left:65%; top:90%; animation-delay:2.7s; animation-duration:9.1s;"></span>
+  </div>
+
 <header>
 
-  <button class="menu-toggle" aria-label="Toggle navigation">
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
     <span></span>
     <span></span>
     <span></span>
@@ -37,9 +51,12 @@
 
   <nav class="navigation">
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#extracurricular">Extracurricular</a>
       <a href="#achievements">Achievements</a>
+      <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
   </nav>
 
@@ -51,10 +68,9 @@
 <section class="hero relative">
 
   <div class="container relative z-10">
-    <div class="flex flex-col md:flex-row items-center gap-12">
-
-      <!-- Left Content -->
-      <div class="flex-1 text-center md:text-left">
+    <div class="hero-flex">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fa-solid fa-leaf"></i> AI &middot; Data Science &middot; IoT</span>
         <h1 id="hero-typewriter">Hi, I'm <span>Arti</span> — A <span>Blending Code,</span> Creativity & Purpose</h1>
         <!-- no separate cursor span needed -->
         <p>Exploring the future through Data Science, AI, and hands-on projects.</p>
@@ -64,88 +80,263 @@
         </div>
       </div>
 
-      <!-- Right Image -->
-      <div class="flex-1 flex justify-center">
-        <img src="in.png" alt="Portrait of Arti Shelar" class="hero-img" loading="lazy"/>
+      <!-- Holographic Sphere (stands in for a profile image) -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="holo-sphere">
+          <div class="holo-glow"></div>
+          <div class="holo-orbit orbit-1"><span class="holo-particle"></span></div>
+          <div class="holo-orbit orbit-2"><span class="holo-particle"></span></div>
+          <div class="holo-orbit orbit-3"><span class="holo-particle"></span></div>
+          <div class="holo-orbit orbit-4"><span class="holo-particle"></span></div>
+          <div class="holo-core">
+            <div class="holo-meridians"></div>
+            <div class="holo-latitudes"></div>
+            <div class="holo-shine"></div>
+          </div>
+          <div class="holo-ring ring-a"></div>
+          <div class="holo-ring ring-b"></div>
+        </div>
       </div>
-
     </div>
   </div>
 </section>
 
-
-
-
-  <!-- About Section -->
+  <!-- About Section: Forest Journal -->
 <section id="about" class="section about-section">
   <div class="container">
     <h2>About Me</h2>
 
-    <div class="about-card">
-      <p>
-        I’m Arti. I explore ideas through AI, IoT, and data-driven design.
-        This space shares real projects, creative experiments, and my journey
-        of building technology that solves meaningful problems.
-      </p>
-    </div>
+    <div class="journal">
+      <div class="journal-page">
+        <div class="journal-fold" aria-hidden="true"></div>
 
+        <div class="journal-slides" id="journal-slides">
+          <div class="journal-entry is-active">
+            <h3 class="journal-entry-title"><i class="fa-solid fa-feather"></i> Who I Am</h3>
+            <p class="journal-entry-text">
+              I enjoy transforming ideas into practical AI and IoT solutions.
+            </p>
+          </div>
+
+          <div class="journal-entry">
+            <h3 class="journal-entry-title"><i class="fa-solid fa-compass"></i> What Drives Me</h3>
+            <ul class="journal-words">
+              <li>Curiosity</li>
+              <li>Learning</li>
+              <li>Building</li>
+            </ul>
+          </div>
+
+          <div class="journal-entry">
+            <h3 class="journal-entry-title"><i class="fa-solid fa-seedling"></i> Current Journey</h3>
+            <p class="journal-entry-text">
+              Exploring Machine Learning, Computer Vision, and Intelligent
+              Systems.
+            </p>
+          </div>
+        </div>
+
+        <div class="journal-nav" role="tablist" aria-label="About Me pages">
+          <button type="button" class="journal-arrow" id="journal-prev" aria-label="Previous entry">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="journal-dots" id="journal-dots">
+            <button type="button" class="journal-dot is-active" data-goto="0" aria-label="Who I Am"></button>
+            <button type="button" class="journal-dot" data-goto="1" aria-label="What Drives Me"></button>
+            <button type="button" class="journal-dot" data-goto="2" aria-label="Current Journey"></button>
+          </div>
+          <button type="button" class="journal-arrow" id="journal-next" aria-label="Next entry">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+  <!-- Internship / Experience Section -->
+  <section id="experience" class="section experience-section">
+    <h2>Experience</h2>
+
+    <div class="exp-card">
+      <div class="exp-vine" aria-hidden="true">
+        <span class="exp-vine-fill"></span>
+        <span class="exp-vine-node exp-vine-node-1"></span>
+        <span class="exp-vine-node exp-vine-node-2"></span>
+        <span class="exp-vine-node exp-vine-node-3"></span>
+      </div>
+
+      <div class="exp-header">
+        <span class="exp-icon" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></span>
+        <div class="exp-header-text">
+          <h3 class="exp-role">AI Intern</h3>
+          <p class="exp-company">Drushya Digital India Pvt. Ltd. <span class="exp-mode">(Remote)</span></p>
+        </div>
+        <span class="exp-date">Oct 2024 – Jan 2025</span>
+      </div>
+
+      <div class="exp-divider" aria-hidden="true"></div>
+
+      <div class="exp-block">
+        <h4 class="exp-block-title">What I Built</h4>
+        <ul class="exp-list">
+          <li>AI Chatbot</li>
+          <li>Excel Automation</li>
+          <li>AI Workflows</li>
+        </ul>
+      </div>
+
+      <div class="exp-divider" aria-hidden="true"></div>
+
+      <div class="exp-block">
+        <h4 class="exp-block-title">Skills Applied</h4>
+        <div class="exp-tags">
+          <span class="exp-tag" tabindex="0" data-tip="Built chatbot logic & automation scripts">Python</span>
+          <span class="exp-tag" tabindex="0" data-tip="Connected chatbot to external services">APIs</span>
+          <span class="exp-tag" tabindex="0" data-tip="Debugging workflows across the internship">Problem Solving</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Skills Section -->
   <section id="skills" class="section">
     <h2>My Skills</h2>
+
+    <!-- Interactive Filter Bar -->
+    <div class="skills-filter-bar" role="tablist" aria-label="Filter skills by category">
+      <button class="skills-filter-btn is-active" data-filter="all" role="tab" aria-selected="true">
+        <i class="fa-solid fa-layer-group"></i> All
+      </button>
+      <button class="skills-filter-btn" data-filter="languages" role="tab" aria-selected="false">
+        <i class="fa-solid fa-code"></i> Languages
+      </button>
+      <button class="skills-filter-btn" data-filter="data" role="tab" aria-selected="false">
+        <i class="fa-solid fa-chart-line"></i> Data Science
+      </button>
+      <button class="skills-filter-btn" data-filter="viz" role="tab" aria-selected="false">
+        <i class="fa-solid fa-chart-pie"></i> Visualization
+      </button>
+      <button class="skills-filter-btn" data-filter="ml" role="tab" aria-selected="false">
+        <i class="fa-solid fa-brain"></i> Machine Learning
+      </button>
+      <button class="skills-filter-btn" data-filter="tools" role="tab" aria-selected="false">
+        <i class="fa-solid fa-toolbox"></i> Tools
+      </button>
+      <button class="skills-filter-btn" data-filter="soft" role="tab" aria-selected="false">
+        <i class="fa-solid fa-users"></i> Soft Skills
+      </button>
+    </div>
+
     <div class="skills-wrapper">
       <div class="skills-list">
 
-        <!-- Programming Languages -->
-        <div class="skill-card">
-          <h3>Programming</h3>
-          <div class="skill-item">
-            <div class="label">Python</div>
-            <div class="bar"><div class="bar-fill" style="width: 90%;"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="label">SQL</div>
-            <div class="bar"><div class="bar-fill" style="width: 85%;"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="label">C</div>
-            <div class="bar"><div class="bar-fill" style="width: 70%;"></div></div>
-          </div>
-        </div>
-
-        <!-- EDA -->
-        <div class="skill-card">
-          <h3>EDA</h3>
-          <div class="skill-item">
-            <div class="label">Data Cleaning & Preprocessing</div>
-            <div class="bar"><div class="bar-fill" style="width: 90%;"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="label">Data Visualization</div>
-            <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="label">Feature Engineering & Transformations</div>
-            <div class="bar"><div class="bar-fill" style="width: 75%;"></div></div>
+        <div class="skill-card" data-category="languages" tabindex="0">
+          <div class="skill-card-inner">
+            <div class="skill-card-face skill-card-front">
+              <h3>Programming Languages</h3>
+              <div class="skill-tags">
+                <span class="skill-tag"><i class="fa-brands fa-python"></i>Python</span>
+                <span class="skill-tag"><i class="fa-brands fa-js"></i>JavaScript</span>
+              </div>
+              <span class="skill-flip-hint"><i class="fa-solid fa-rotate"></i> Tap to flip</span>
+            </div>
+            <div class="skill-card-face skill-card-back">
+              <i class="fa-solid fa-code skill-back-icon"></i>
+              <p>Building efficient, scalable applications with clean, readable code.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Machine Learning -->
-        <div class="skill-card">
-          <h3>Machine Learning</h3>
-          <div class="skill-item">
-            <div class="label">Supervised Learning</div>
-            <div class="bar"><div class="bar-fill" style="width: 75%;"></div></div>
+        <div class="skill-card" data-category="data" tabindex="0">
+          <div class="skill-card-inner">
+            <div class="skill-card-face skill-card-front">
+              <h3>Data Science & Analytics</h3>
+              <div class="skill-tags">
+                <span class="skill-tag"><i class="fa-solid fa-database"></i>MySQL</span>
+                <span class="skill-tag"><i class="fa-solid fa-table-cells"></i>Pandas</span>
+                <span class="skill-tag"><i class="fa-solid fa-square-root-variable"></i>NumPy</span>
+                <span class="skill-tag"><i class="fa-solid fa-magnifying-glass-chart"></i>EDA</span>
+              </div>
+              <span class="skill-flip-hint"><i class="fa-solid fa-rotate"></i> Tap to flip</span>
+            </div>
+            <div class="skill-card-face skill-card-back">
+              <i class="fa-solid fa-chart-line skill-back-icon"></i>
+              <p>Extracting meaningful insights and patterns from complex datasets.</p>
+            </div>
           </div>
-          <div class="skill-item">
-            <div class="label">Unsupervised Learning</div>
-            <div class="bar"><div class="bar-fill" style="width: 70%;"></div></div>
+        </div>
+
+        <div class="skill-card" data-category="viz" tabindex="0">
+          <div class="skill-card-inner">
+            <div class="skill-card-face skill-card-front">
+              <h3>Data Visualization</h3>
+              <div class="skill-tags">
+                <span class="skill-tag"><i class="fa-solid fa-chart-column"></i>Power BI</span>
+                <span class="skill-tag"><i class="fa-solid fa-chart-line"></i>Matplotlib</span>
+                <span class="skill-tag"><i class="fa-solid fa-chart-area"></i>Seaborn</span>
+              </div>
+              <span class="skill-flip-hint"><i class="fa-solid fa-rotate"></i> Tap to flip</span>
+            </div>
+            <div class="skill-card-face skill-card-back">
+              <i class="fa-solid fa-chart-pie skill-back-icon"></i>
+              <p>Turning raw numbers into clear, compelling visual stories.</p>
+            </div>
           </div>
-          <div class="skill-item">
-            <div class="label">Evaluation Metrics</div>
-            <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
+        </div>
+
+        <div class="skill-card" data-category="ml" tabindex="0">
+          <div class="skill-card-inner">
+            <div class="skill-card-face skill-card-front">
+              <h3>Machine Learning</h3>
+              <div class="skill-tags">
+                <span class="skill-tag"><i class="fa-solid fa-diagram-project"></i>Scikit-learn</span>
+                <span class="skill-tag"><i class="fa-solid fa-broom"></i>Data Preprocessing</span>
+                <span class="skill-tag"><i class="fa-solid fa-gears"></i>Model Training & Evaluation</span>
+              </div>
+              <span class="skill-flip-hint"><i class="fa-solid fa-rotate"></i> Tap to flip</span>
+            </div>
+            <div class="skill-card-face skill-card-back">
+              <i class="fa-solid fa-brain skill-back-icon"></i>
+              <p>Training models that learn from data and make accurate predictions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-category="tools" tabindex="0">
+          <div class="skill-card-inner">
+            <div class="skill-card-face skill-card-front">
+              <h3>Tools & Platforms</h3>
+              <div class="skill-tags">
+                <span class="skill-tag"><i class="fa-brands fa-git-alt"></i>Git</span>
+                <span class="skill-tag"><i class="fa-brands fa-github"></i>GitHub</span>
+                <span class="skill-tag"><i class="fa-solid fa-book"></i>Jupyter Notebook</span>
+              </div>
+              <span class="skill-flip-hint"><i class="fa-solid fa-rotate"></i> Tap to flip</span>
+            </div>
+            <div class="skill-card-face skill-card-back">
+              <i class="fa-solid fa-toolbox skill-back-icon"></i>
+              <p>Leveraging modern tools for version control and collaborative development.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-category="soft" tabindex="0">
+          <div class="skill-card-inner">
+            <div class="skill-card-face skill-card-front">
+              <h3>Soft Skills</h3>
+              <div class="skill-tags">
+                <span class="skill-tag"><i class="fa-solid fa-comments"></i>Communication</span>
+                <span class="skill-tag"><i class="fa-solid fa-puzzle-piece"></i>Problem Solving</span>
+                <span class="skill-tag"><i class="fa-solid fa-people-group"></i>Team Collaboration</span>
+                <span class="skill-tag"><i class="fa-solid fa-clock"></i>Time Management</span>
+              </div>
+              <span class="skill-flip-hint"><i class="fa-solid fa-rotate"></i> Tap to flip</span>
+            </div>
+            <div class="skill-card-face skill-card-back">
+              <i class="fa-solid fa-users skill-back-icon"></i>
+              <p>Communicating ideas clearly and collaborating effectively in teams.</p>
+            </div>
           </div>
         </div>
 
@@ -155,68 +346,318 @@
 
   <!-- Projects Section -->
   <section class="section project-section" id="projects" aria-labelledby="projects-heading">
-  
     <h2 id="projects-heading">My Projects</h2>
-    <div class="projects-grid">
 
-      <div class="project-card">
-        <h3>AI Tutor: Personalized Education System</h3>
-        <span class="project-date">Oct 2024 – Jan 2025</span>
-        <ul class="project-points">
-          <li>AI-driven tutoring system with quiz generation, Q&A, and progress tracking.</li>
-          <li>Used embeddings + convex optimization for personalized study paths.</li>
-          <li>Built modular Streamlit UI with MySQL integration for quizzes.</li>
-        </ul>
-        <p><strong>Tech:</strong> Python, TensorFlow, Streamlit, SQL, NumPy, Pandas</p>
-        <a href="https://github.com/shelararti/AI-Tutor-Deep-Learning-Based-Personalized-Learning-System" class="btn-view-details">View Details</a>
-      </div>
-
-      <div class="project-card">
-        <h3>IoT-Based LED Control System</h3>
-        <span class="project-date">Oct 2024 – Jan 2025</span>
-        <ul class="project-points">
-          <li>Remote LED control using ESP8266, MQTT, and Adafruit IO.</li>
-          <li>Multi-WiFi auto-connect for reliable connectivity.</li>
-        </ul>
-        <p><strong>Tech:</strong> ESP8266, Arduino IDE, MQTT, C++</p>
-        <a href="https://github.com/shelararti/IoT-based-LED-Multi_User_Control-Using-ESP8266-and-MQTT" class="btn-view-details">View Details</a>
-      </div>
-
-      <div class="project-card">
+    <div class="projects-featured">
+      <div class="project-card featured">
+        <div class="project-thumb" data-accent="asl">
+          <i class="fa-solid fa-hands-asl-interpreting"></i>
+        </div>
+        <span class="featured-tag">Featured</span>
         <h3>Real-Time ASL Sign Language Detection</h3>
-        <span class="project-date">Jan 2025 – Nov 2025</span>
+        <div class="project-meta-row">
+          <span class="project-date"><i class="fa-regular fa-calendar"></i> Jan 2025 – Nov 2025</span>
+        </div>
         <ul class="project-points">
           <li>ASL recognition using MediaPipe landmarks and CNN-based model.</li>
           <li>Engineered 210+ geometric features achieving 99.64% accuracy.</li>
           <li>Live predictions via Flask web app for sign-to-text translation.</li>
         </ul>
-        <p><strong>Tech:</strong> Python, TensorFlow, MediaPipe, Flask</p>
-        <a href="https://github.com/shelararti/Real-Time-Sign-Language-Detection-and-Translation-System" class="btn-view-details">View Details</a>
+        <div class="project-stack">
+          <span class="stack-tag"><i class="fa-brands fa-python"></i>Python</span>
+          <span class="stack-tag"><i class="fa-solid fa-diagram-project"></i>TensorFlow</span>
+          <span class="stack-tag"><i class="fa-solid fa-hand"></i>MediaPipe</span>
+          <span class="stack-tag"><i class="fa-solid fa-flask"></i>Flask</span>
+        </div>
+        <a href="https://github.com/shelararti/Real-Time-Sign-Language-Detection-and-Translation-System" target="_blank" rel="noopener noreferrer" class="btn-view-details">
+          <i class="fa-brands fa-github"></i> View Repository
+        </a>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-thumb" data-accent="tutor">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <h3>AI Tutor: Personalized Education System</h3>
+        <div class="project-meta-row">
+          <span class="project-date"><i class="fa-regular fa-calendar"></i> Oct 2024 – Jan 2025</span>
+        </div>
+        <ul class="project-points">
+          <li>AI-driven tutoring system with quiz generation, Q&A, and progress tracking.</li>
+          <li>Used embeddings + convex optimization for personalized study paths.</li>
+          <li>Built modular Streamlit UI with MySQL integration for quizzes.</li>
+        </ul>
+        <div class="project-stack">
+          <span class="stack-tag"><i class="fa-brands fa-python"></i>Python</span>
+          <span class="stack-tag"><i class="fa-solid fa-diagram-project"></i>TensorFlow</span>
+          <span class="stack-tag"><i class="fa-solid fa-bolt"></i>Streamlit</span>
+          <span class="stack-tag"><i class="fa-solid fa-database"></i>SQL</span>
+          <span class="stack-tag"><i class="fa-solid fa-square-root-variable"></i>NumPy</span>
+          <span class="stack-tag"><i class="fa-solid fa-table-cells"></i>Pandas</span>
+        </div>
+        <a href="https://github.com/shelararti/AI-Tutor-Deep-Learning-Based-Personalized-Learning-System" target="_blank" rel="noopener noreferrer" class="btn-view-details">
+          <i class="fa-brands fa-github"></i> View Repository
+        </a>
       </div>
 
+      <div class="project-card">
+        <div class="project-thumb" data-accent="movie">
+          <i class="fa-solid fa-clapperboard"></i>
+        </div>
+        <h3>Movie Recommendation System (Collaborative Filtering)</h3>
+        <div class="project-meta-row">
+          <span class="project-date"><i class="fa-regular fa-calendar"></i> Nov 2025</span>
+        </div>
+        <ul class="project-points">
+          <li>Built a personalized movie recommendation engine using SVD-based collaborative filtering on the MovieLens dataset.</li>
+        </ul>
+        <div class="project-stack">
+          <span class="stack-tag"><i class="fa-brands fa-python"></i>Python</span>
+          <span class="stack-tag"><i class="fa-solid fa-table-cells"></i>Pandas</span>
+          <span class="stack-tag"><i class="fa-solid fa-square-root-variable"></i>NumPy</span>
+          <span class="stack-tag"><i class="fa-solid fa-share-nodes"></i>Scikit-learn</span>
+        </div>
+        <a href="https://github.com/shelararti/Movie-Recommendation-System-User-Based-" target="_blank" rel="noopener noreferrer" class="btn-view-details">
+          <i class="fa-brands fa-github"></i> View Repository
+        </a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb" data-accent="churn">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <h3>Customer Churn Prediction & Exploratory Data Analysis</h3>
+        <div class="project-meta-row">
+          <span class="project-date"><i class="fa-regular fa-calendar"></i> Jan 2026</span>
+        </div>
+        <ul class="project-points">
+          <li>Performed exploratory data analysis to identify patterns and factors affecting customer churn.</li>
+        </ul>
+        <div class="project-stack">
+          <span class="stack-tag"><i class="fa-brands fa-python"></i>Python</span>
+          <span class="stack-tag"><i class="fa-solid fa-table-cells"></i>Pandas</span>
+          <span class="stack-tag"><i class="fa-solid fa-square-root-variable"></i>NumPy</span>
+          <span class="stack-tag"><i class="fa-solid fa-chart-area"></i>Matplotlib</span>
+          <span class="stack-tag"><i class="fa-solid fa-share-nodes"></i>Scikit-learn</span>
+        </div>
+        <a href="https://github.com/shelararti/Customer-Churn-Prediction-EDA" target="_blank" rel="noopener noreferrer" class="btn-view-details">
+          <i class="fa-brands fa-github"></i> View Repository
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Extracurricular Activities Section -->
+  <section id="extracurricular" class="section">
+    <h2>Extracurricular Activities</h2>
+
+    <!-- Interactive Filter Bar -->
+    <div class="skills-filter-bar extra-filter-bar" role="tablist" aria-label="Filter activities by category">
+      <button class="skills-filter-btn is-active" data-filter="all" role="tab" aria-selected="true">
+        <i class="fa-solid fa-layer-group"></i> All
+      </button>
+      <button class="skills-filter-btn" data-filter="leadership" role="tab" aria-selected="false">
+        <i class="fa-solid fa-crown"></i> Leadership
+      </button>
+      <button class="skills-filter-btn" data-filter="volunteering" role="tab" aria-selected="false">
+        <i class="fa-solid fa-hand-holding-heart"></i> Volunteering
+      </button>
+      <button class="skills-filter-btn" data-filter="opensource" role="tab" aria-selected="false">
+        <i class="fa-brands fa-github"></i> Open Source
+      </button>
+      <button class="skills-filter-btn" data-filter="robotics" role="tab" aria-selected="false">
+        <i class="fa-solid fa-robot"></i> Robotics & Clubs
+      </button>
+    </div>
+
+    <div class="timeline timeline-icons">
+      <div class="timeline-item" data-category="leadership">
+        <span class="timeline-badge"><i class="fa-solid fa-crown"></i></span>
+        <div class="info-box">
+          <div class="info-box-head">
+            <h3 class="info-title">AI Club Member & Hackathon Lead — Sanjivani Group of Institutes</h3>
+            <span class="info-date">Feb 2026 – Present</span>
+          </div>
+          <span class="info-category-tag cat-leadership"><i class="fa-solid fa-crown"></i> Leadership</span>
+          <ul class="project-points">
+            <li>Served as Technical and Decoration Head for AI NEXUS Hackathon, leading technical operations and coordinating execution for 70+ teams and 300+ participants.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-category="volunteering">
+        <span class="timeline-badge"><i class="fa-solid fa-hand-holding-heart"></i></span>
+        <div class="info-box">
+          <div class="info-box-head">
+            <h3 class="info-title">Volunteer — Sanjivani Talent Summit</h3>
+            <span class="info-date">Jun 2026</span>
+          </div>
+          <span class="info-category-tag cat-volunteering"><i class="fa-solid fa-hand-holding-heart"></i> Volunteering</span>
+          <ul class="project-points">
+            <li>Assisted with guest reception and event coordination, interacting professionally with HR representatives and alumni attendees.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-category="opensource">
+        <span class="timeline-badge"><i class="fa-brands fa-github"></i></span>
+        <div class="info-box">
+          <div class="info-box-head">
+            <h3 class="info-title">Technical Projects & Open-Source Contributions</h3>
+            <span class="info-date">Jul 2026 – Aug 2026</span>
+          </div>
+          <span class="info-category-tag cat-opensource"><i class="fa-brands fa-github"></i> Open Source</span>
+          <ul class="project-points">
+            <li>Contributed datasets and machine learning models (near 1k / over 960 downloads for a model) on Kaggle, supporting collaborative ML development and reuse.</li>
+            <li>Built and deployed a Flask-based file utility application on Render — <a href="https://renamer-6e1c.onrender.com/" target="_blank" rel="noopener noreferrer" class="inline-link">View app</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-category="robotics">
+        <span class="timeline-badge"><i class="fa-solid fa-robot"></i></span>
+        <div class="info-box">
+          <div class="info-box-head">
+            <h3 class="info-title">Member, Team Charlie — Space & Robotics Club, Sanjivani Group of Institutes</h3>
+            <span class="info-date">Sep 2023 – Dec 2025</span>
+          </div>
+          <span class="info-category-tag cat-robotics"><i class="fa-solid fa-robot"></i> Robotics & Clubs</span>
+          <ul class="project-points">
+            <li>Applied IoT concepts through hands-on projects in home automation systems and intelligent traffic management solutions, collaborating across versatile teams.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Achievements Section -->
   <section class="achievements section" id="achievements">
     <h2>Achievements</h2>
-    <div class="achievement-list">
-      <div class="achievement-box">
-        <h3 class="achievement-title">NPTEL Business Analytics & Text Mining using Python</h3>
-        <p class="achievement-details">🏆 Ranked in the Top 5% nationally (Elite + Gold), scoring 90%.</p>
-        <p class="achievement-date">2025</p>
+    <div class="medal-row">
+
+      <div class="medal-card">
+        <div class="medal-badge">
+          <i class="fa-solid fa-trophy"></i>
+        </div>
+        <div class="medal-card-body">
+          <h3 class="medal-title">NPTEL Elite + Gold Certification</h3>
+          <p class="medal-sub">Business Analytics & Text Mining Using Python</p>
+          <p class="medal-detail">🏆 Ranked in the Top 5% nationwide.</p>
+          <span class="medal-year">2025</span>
+        </div>
       </div>
 
-      <div class="achievement-box">
-        <h3 class="achievement-title">Avishkar Competition</h3>
-        <p class="achievement-details">Achieved Zonal Level qualification in Avishkar Competition.</p>
-        <p class="achievement-date">2025</p>
+      <div class="medal-card">
+        <div class="medal-badge">
+          <i class="fa-solid fa-medal"></i>
+        </div>
+        <div class="medal-card-body">
+          <h3 class="medal-title">Smart India Hackathon (SIH) 2025</h3>
+          <p class="medal-sub">IoT-Based Safety System</p>
+          <p class="medal-detail">National-Level Participant.</p>
+          <span class="medal-year">2025</span>
+        </div>
       </div>
 
-      <div class="achievement-box">
-        <h3 class="achievement-title">Smart India Hackathon (SIH)</h3>
-        <p class="achievement-details">Selected for the National Level round in Smart India Hackathon.</p>
-        <p class="achievement-date">2025</p>
+      <div class="medal-card medal-placeholder">
+        <div class="medal-badge">
+          <i class="fa-solid fa-copyright"></i>
+        </div>
+        <div class="medal-card-body">
+          <h3 class="medal-title">Copyright 1</h3>
+          <p class="medal-sub">Real-Time Sign Language Detection and Translation System</p>
+          <p class="medal-detail">LD-44917/2025-CO</p>
+          <span class="medal-year">30/04/2026</span>
+        </div>
+      </div>
+
+      <div class="medal-card medal-placeholder">
+        <div class="medal-badge">
+          <i class="fa-solid fa-copyright"></i>
+        </div>
+        <div class="medal-card-body">
+          <h3 class="medal-title">Copyright 2</h3>
+          <p class="medal-sub">AI Based Mental Health Chatbot Using NLP and Deep Learning</p>
+          <p class="medal-detail">LD-42134/2025-CO</p>
+          <span class="medal-year">19/05/2026</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="section certifications-section" id="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-gallery">
+
+      <div class="cert-card" data-cert="excelr">
+        <div class="cert-thumb">
+          <div class="cert-thumb-border">
+            <i class="fa-solid fa-award cert-seal"></i>
+            <p class="cert-thumb-name">NLP, ChatGPT &<br>Prompt Engineering</p>
+            <span class="cert-thumb-issuer">EXCELR</span>
+          </div>
+        </div>
+        <h3 class="cert-name">NLP, ChatGPT & Prompt Engineering</h3>
+        <p class="cert-issuer"><i class="fa-solid fa-building-columns"></i> EXCELR</p>
+        <button type="button" class="btn-view-cert" data-cert-trigger="excelr">
+          <i class="fa-solid fa-expand"></i> View Certificate
+        </button>
+      </div>
+
+      <div class="cert-card" data-cert="linkedin">
+        <div class="cert-thumb">
+          <div class="cert-thumb-border">
+            <i class="fa-solid fa-award cert-seal"></i>
+            <p class="cert-thumb-name">SQL Essential Training</p>
+            <span class="cert-thumb-issuer">LinkedIn Learning</span>
+          </div>
+        </div>
+        <h3 class="cert-name">SQL Essential Training</h3>
+        <p class="cert-issuer"><i class="fa-brands fa-linkedin"></i> LinkedIn Learning</p>
+        <button type="button" class="btn-view-cert" data-cert-trigger="linkedin">
+          <i class="fa-solid fa-expand"></i> View Certificate
+        </button>
+      </div>
+
+      <div class="cert-card" data-cert="nptel">
+        <div class="cert-thumb">
+          <div class="cert-thumb-border">
+            <i class="fa-solid fa-award cert-seal"></i>
+            <p class="cert-thumb-name">Business Analytics &<br>Text Mining Using Python</p>
+            <span class="cert-thumb-issuer">NPTEL</span>
+          </div>
+        </div>
+        <h3 class="cert-name">Business Analytics & Text Mining Using Python</h3>
+        <p class="cert-issuer"><i class="fa-solid fa-building-columns"></i> NPTEL</p>
+        <button type="button" class="btn-view-cert" data-cert-trigger="nptel">
+          <i class="fa-solid fa-expand"></i> View Certificate
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Lightbox modal for certificate previews -->
+    <div class="cert-modal" id="cert-modal" aria-hidden="true">
+      <div class="cert-modal-backdrop" data-cert-close></div>
+      <div class="cert-modal-content" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title">
+        <button type="button" class="cert-modal-close" data-cert-close aria-label="Close certificate preview">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="cert-modal-thumb">
+          <div class="cert-thumb-border cert-modal-border">
+            <i class="fa-solid fa-award cert-seal"></i>
+            <p class="cert-thumb-name" id="cert-modal-name"></p>
+            <span class="cert-thumb-issuer" id="cert-modal-issuer"></span>
+          </div>
+        </div>
+        <h3 id="cert-modal-title"></h3>
+        <p id="cert-modal-issuer-line"></p>
       </div>
     </div>
   </section>
@@ -228,21 +669,41 @@
       <p>Let’s collaborate or just say hi — I’m always open to new ideas and conversations.</p>
 
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/arti-shelar-a6b269291/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/shelararti" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-        <a href="mailto:shelararti10@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/arti-shelar-a6b269291/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-wrap">
+          <i class="fab fa-linkedin"></i>
+          <span class="social-firefly" aria-hidden="true"></span>
+        </a>
+        <a href="https://github.com/shelararti" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon-wrap">
+          <i class="fab fa-github"></i>
+          <span class="social-firefly" aria-hidden="true"></span>
+        </a>
+        <a href="mailto:shelararti10@gmail.com" aria-label="Email — click to copy" class="social-icon-wrap" id="contact-email-link" data-email="shelararti10@gmail.com">
+          <i class="fas fa-envelope"></i>
+          <span class="social-firefly" aria-hidden="true"></span>
+        </a>
       </div>
+      <p class="contact-hint">Tap the envelope to copy my email</p>
 
       <div style="margin-top: 2rem;">
         <a href="RESUME_ARTI.pdf" class="btn-download-resume" download>Download My Resume</a>
       </div>
     </div>
+
+    <div class="copy-toast" id="copy-toast" role="status" aria-live="polite"></div>
   </section>
 
   <!-- Footer -->
   <footer style="background: rgba(0, 0, 0, 0.7); color: #fff; text-align: center; padding: 25px 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
     <p style="margin: 0; font-weight: 600;">© <span id="year"></span> Arti Shelar.</p>
   </footer>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <!-- Back to top -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <!-- JS -->
   <script src="script.js" defer></script>

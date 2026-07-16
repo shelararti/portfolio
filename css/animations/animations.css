@@ -1,4 +1,0 @@
-/* === Animations for skill bars (example) === */
-.skill-item .bar-fill[data-percent="80"] { width: 80%; }
-.skill-item .bar-fill[data-percent="90"] { width: 90%; }
-.skill-item .bar-fill[data-percent="70"] { width: 70%; }
