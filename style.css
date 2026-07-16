@@ -2382,7 +2382,7 @@ body.nav-open {
     align-items: flex-start;
     justify-content: flex-start;
 
-    padding: 80px 0 2rem 30px;
+    padding: 80px 30px 2rem 30px;
     gap: 25px;
     overflow-y: auto;
 
@@ -2473,13 +2473,26 @@ header {
 }
 
 .navigation {
-  transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 header.is-scrolled .navigation {
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 0.65rem 0;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Only shrink the bar's own padding on desktop, where .navigation is a
+   horizontal top bar. On mobile it's a fixed slide-in panel whose padding
+   (see the 768px breakpoint) positions the links below the close button
+   and away from the edge — that padding must never be touched here. */
+@media (min-width: 769px) {
+  .navigation {
+    transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  header.is-scrolled .navigation {
+    padding: 0.65rem 0;
+  }
 }
 
 /* Back-to-top button */
